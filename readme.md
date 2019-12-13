@@ -31,9 +31,9 @@ By the end of this, developers should be able to:
 
 # What's the Big Idea?
 
-**Test Driven Development*- (TDD) describes one way to to develop software.
+**Test Driven Development** (TDD) describes one way to to develop software.
 The philosophy of Test Driven Development says tests should be written
-**before*- any other code. Instead of writing code and then writing tests
+**before** any other code. Instead of writing code and then writing tests
 to make sure the code words, you should write tests and then write code until
 the tests work.
 
@@ -71,13 +71,13 @@ We will be using two testing tools for our TDD:
 Both of these are installed as `devDependencies` for our project in `package.json`.
 
 Mocha will provide us with the `describe` and `it` functions that provide
-structure to our tests by grouping them into **test suites*- and **test batches**.
+structure to our tests by grouping them into **test suites** and **test batches**.
 Test suites are the collections of tests that we're running to test a single
 piece of functionality or behavior in our program. Test cases are the individual
 unit tests that describe pieces of that behavior for our code to either pass or
 fail.
 
-Test cases use a concept called **assertions*- which are tied to values and
+Test cases use a concept called **assertions** which are tied to values and
 will fail if expected values do not match the actual values. Chai provides
 functions and methods that help us compare the outputs of our tests with the
 assertions' expected values.
