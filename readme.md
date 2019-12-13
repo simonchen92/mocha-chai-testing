@@ -31,9 +31,9 @@ By the end of this, developers should be able to:
 
 # What's the Big Idea?
 
-**Test Driven Development** (TDD) describes one way to to develop software.
+**Test Driven Development*- (TDD) describes one way to to develop software.
 The philosophy of Test Driven Development says tests should be written
-**before** any other code. Instead of writing code and then writing tests
+**before*- any other code. Instead of writing code and then writing tests
 to make sure the code words, you should write tests and then write code until
 the tests work.
 
@@ -71,16 +71,16 @@ We will be using two testing tools for our TDD:
 Both of these are installed as `devDependencies` for our project in `package.json`.
 
 Mocha will provide us with the `describe` and `it` functions that provide
-structure to our tests by grouping them into **test suites** and **test batches**.
+structure to our tests by grouping them into **test suites*- and **test batches**.
 Test suites are the collections of tests that we're running to test a single
 piece of functionality or behavior in our program. Test cases are the individual
 unit tests that describe pieces of that behavior for our code to either pass or
 fail.
 
-Test cases use a concept called **assertions** which are tied to values and
+Test cases use a concept called **assertions*- which are tied to values and
 will fail if expected values do not match the actual values. Chai provides
 functions and methods that help us compare the outputs of our tests with the
-assertions' expected values. 
+assertions' expected values.
 
 # ROT13 Cipher
 
@@ -135,34 +135,66 @@ How should our program behave? Let's gather some simple test requirements:
 ## Code Along: Creating Tests
 
 Now that we have our test descriptions, we can start writing them using the
-testing package [`mocha`]
+testing package [`mocha`].
 
-# Exercise: Write Your Own YearDate Class
+## Demo: Chai Assertions
 
-Let's write our own `YearDate` class that encapsulates dates into a convenient
-object. We'll be able to keep track of days, months, and years in each object.
-We'll be able to use two of the objects together to calculate the number of
-days between two `YearDate` objects. Our class should handle Leap Years
-correctly.
+We haven't actually been using much of Chai yet. Chai can be helpful for more
+readable tests, as it uses natural language assertions.
 
-* The `YearDate` constructor should accept a `day`, `month`, and `year`
-* There should be a method called `.daysInMonth()` that returns the total
+We could update our tests to use this natural language style:
+
+```js
+it('should convert A into N', function () {
+  // assert.strictEqual('n', rot13('a'))
+  rot13('a').should.equal('n')
+})
+```
+
+## Lab: More Tests
+
+Now that our first set of tests are written, here's more:
+
+- It should preserve capitalization
+  - Convert 'A' to 'N'
+  - Convert 'N' to 'A'
+  - Convert 'Z' to 'M'
+  - Convert 'M' to 'Z'
+  - Convert 'urYYB' to 'heLLO'
+  - Convert 'heLLO' to 'urYYB'
+- It should preserve whitespace
+  - Convert 'Today I went to the store' to 'Gbqnl V jrag gb gur fgber'
+- It should preserve punctuation
+  - Convert "I'm telling you, 'go away!' Can you hear me?" to "V'z gryyvat lbh,
+  'tb njnl!' Pna lbh urne zr?"
+
+---
+
+# Bonus: Write Your Own YearDate Class
+
+Write your own `YearDate` class that encapsulates dates into a convenient
+object. You'll be able to keep track of days, months, and years in each object,
+and use two of the objects together to calculate the number of
+days between them. Your class should handle Leap Years correctly.
+
+- The `YearDate` constructor should accept a `day`, `month`, and `year`
+- There should be a method called `.daysInMonth()` that returns the total
   number of days in the current month.
-* There should be a method called `.nextDay()' that increments a `YearDate`
+- There should be a method called `.nextDay()' that increments a `YearDate`
   object from one day to the next.
-* Each `YearDate` object should have a method `prettyPrint()` that returns
+- Each `YearDate` object should have a method `prettyPrint()` that returns
   a string like `'January 1st, 1988'` or `'June 11th, 1992'` with correct
   '1st', '2nd', '3rd' and 'th' suffixes.
-* Each `YearDate` object should have a method called `.daysBetween(other)` that
+- Each `YearDate` object should have a method called `.daysBetween(other)` that
   accepts another `YearDate` object as a parameter and returns the absolute value
   of numbers of days between one date and another. This method should never
   return a negative number.
 
-## Lab: Test Descriptions
+## Test Descriptions
 
 Before you write any code for the `YearDate` class you should write tests first.
-Work with a partner to write down, in full sentences, different test cases you
-can think of. You should have at least ten different test cases written down.
+Write down, in full sentences, different test cases you can think of. You
+should have at least ten different test cases for this particular test suite.
 
 <details>
   <summary>Here's a list of example test cases.</summary>
@@ -241,10 +273,6 @@ Here is what your test suite should look like for a completed lab...
 
 ![](https://i.imgur.com/s5rv4PR.png)
 
-## Bonus
-
-Refactor your tests using a different [Chai assertion style](http://chaijs.com/).
-
 ## Additional Resources
 
 - Any useful links should be included in the talk material where the link is
@@ -257,6 +285,6 @@ Refactor your tests using a different [Chai assertion style](http://chaijs.com/)
 
 ## [License](LICENSE)
 
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
+1. All content is licensed under a CC­BY­NC­SA 4.0 license.
+1. All software code is licensed under GNU GPLv3. For commercial use or
     alternative licensing, please contact legal@ga.co.
