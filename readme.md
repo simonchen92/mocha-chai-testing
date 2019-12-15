@@ -39,7 +39,7 @@ the tests work.
 
 There are many potential benefits to Test Driven Development:
 
-- Writing tests frist means you'll definitely have tests to test your program
+- Writing tests first means you'll definitely have tests to test your program
   once you're done!
 - Writing tests first can help specify project requirements.
 - Writing tests first can help you think about the intricacies
@@ -71,7 +71,7 @@ We will be using two testing tools for our TDD:
 Both of these are installed as `devDependencies` for our project in `package.json`.
 
 Mocha will provide us with the `describe` and `it` functions that provide
-structure to our tests by grouping them into **test suites** and **test batches**.
+structure to our tests by grouping them into **test suites** and **test cases**.
 Test suites are the collections of tests that we're running to test a single
 piece of functionality or behavior in our program. Test cases are the individual
 unit tests that describe pieces of that behavior for our code to either pass or
@@ -135,7 +135,7 @@ How should our program behave? Let's gather some simple test requirements:
 ## Code Along: Creating Tests
 
 Now that we have our test descriptions, we can start writing them using the
-testing package [`mocha`].
+testing package [`mocha`](https://mochajs.org).
 
 ## Demo: Chai Assertions
 
@@ -156,17 +156,17 @@ it('should convert A into N', function () {
 Now that our first set of tests are written, here's more:
 
 - It should preserve capitalization
-  - Convert 'A' to 'N'
-  - Convert 'N' to 'A'
-  - Convert 'Z' to 'M'
-  - Convert 'M' to 'Z'
-  - Convert 'urYYB' to 'heLLO'
-  - Convert 'heLLO' to 'urYYB'
+  - Convert `'A'` to `'N'`
+  - Convert `'N'` to `'A'`
+  - Convert `'Z'` to `'M'`
+  - Convert `'M'` to `'Z'`
+  - Convert `'urYYB'` to `'heLLO'`
+  - Convert `'heLLO'` to `'urYYB'`
 - It should preserve whitespace
-  - Convert 'Today I went to the store' to 'Gbqnl V jrag gb gur fgber'
+  - Convert `'Today I went to the store'` to `'Gbqnl V jrag gb gur fgber'`
 - It should preserve punctuation
-  - Convert "I'm telling you, 'go away!' Can you hear me?" to "V'z gryyvat lbh,
-  'tb njnl!' Pna lbh urne zr?"
+  - Convert `"I'm telling you, 'go away!' Can you hear me?"` to `"V'z gryyvat lbh,
+  'tb njnl!' Pna lbh urne zr?"`
 
 ---
 
